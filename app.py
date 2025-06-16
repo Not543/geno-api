@@ -43,4 +43,4 @@ def predict_blood_group(image):
 
 
 if __name__ == "__main__":
-    iface.launch(server_name="0.0.0.0", server_port=7860)
+    app.run(host="0.0.0.0", port=7860)
