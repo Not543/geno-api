@@ -5,7 +5,7 @@ from preprocess import preprocess_fingerprint
 from tensorflow.keras.models import load_model
 import numpy as np
 import cv2
-import gradio as gr
+
 
 # Flask config (still useful if you want to extend it later)
 app = Flask(__name__)
@@ -41,14 +41,6 @@ def predict_blood_group(image):
 
     return predicted_class, processed_path
 
-# Gradio UI
-iface = gr.Interface(
-    fn=predict_blood_group,
-    inputs=gr.Image(type="pil"),
-    outputs=["text", "image"],
-    title="Geno API - Blood Group Prediction from Fingerprint",
-    description="Upload a fingerprint image to predict the blood group."
-)
 
 if __name__ == "__main__":
     iface.launch(server_name="0.0.0.0", server_port=7860)
