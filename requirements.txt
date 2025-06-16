@@ -2,4 +2,4 @@ flask
 flask-cors
 tensorflow
 opencv-python
-gradio
+waitress
